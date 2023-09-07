@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Stage 1 || HNG</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- ... Slack Details section ... -->
+      <section class="slack-section">
+        <div>
+          <img
+            src="./assets/images/myImage.jpg"
+            width="200"
+            height="200"
+            alt="King-austin"
+            data-testid="slackDisplayImage"
+          />
+        </div>
+
+        <div>
+          <h1 data-testid="slackUserName">King-austin</h1>
+        </div>
+      </section>
+
+      <!-- Date and Time Section -->
+      <section>
+        <div
+          id="currentDayOfWeek"
+          data-testid="currentDayOfTheWeek"
+          style="text-align: center"
+        ></div>
+        <div id="currentTime" data-testid="currentUTCTime"></div>
+      </section>
+
+      <!-- ... Track...  -->
+      <section>
+        <h2 data-testid="myTrack">Frontend Track</h2>
+      </section>
+
+      <!-- Github Url section  -->
+      <section>
+        <a id="repoUrl" href="" data-testid="githubURL">Visit Repo</a>
+      </section>
+    </div>
+
+    <!-- ..........Some Javascript.......... -->
+    <script>
+      const currentDayOfWeek = document.getElementById("currentDayOfWeek");
+      const currentTime = document.getElementById("currentTime");
+
+      const updateTime = () => {
+        const dayOfWeek = new Date().toLocaleDateString((en = "us"), {
+          weekday: "long",
+        });
+
+        const time = new Date();
+        const utcTime = time.getVarDate(1999, 1, 2);
+
+        currentDayOfWeek.textContent = dayOfWeek;
+        currentTime.textContent = utcTime;
+      };
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>

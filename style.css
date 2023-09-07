@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  padding: 3rem;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+.container .slack-section {
+  display: grid;
+  place-items: center;
+}
+
+[data-testid=myTrack] {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

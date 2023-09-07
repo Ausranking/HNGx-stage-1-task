@@ -1,0 +1,31 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: aquamarine;
+$decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-stack;
+  text-decoration: $decoration;
+}
+img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  padding: 3rem;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  .slack-section {
+    display: grid;
+    place-items: center;
+  }
+}
+
+[data-testid="myTrack"] {
+  color: red;
+}
