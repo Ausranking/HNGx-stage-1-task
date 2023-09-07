@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <!-- ... Slack Details section ... -->
-      <section class="slack-section">
+      <section id="slack-section">
         <div>
           <img
             src="./assets/images/myImage.jpg"
@@ -33,7 +33,7 @@
       </section>
 
       <!-- Date and Time Section -->
-      <section>
+      <section id="date-and-time-section">
         <div
           data-testid="currentDayOfTheWeek"
           id="DayOfWeek"
@@ -44,13 +44,19 @@
       </section>
 
       <!-- ... Track...  -->
-      <section>
-        <h2 data-testid="myTrack">Frontend</h2>
+      <section id="track-info">
+        <h2 data-testid="myTrack">Frontend Track</h2>
       </section>
 
       <!-- Github Url section  -->
-      <section>
-        <a id="repoUrl" href="" data-testid="githubURL">Visit Repo</a>
+      <section id="repo-section">
+        <a
+          data-testid="githubURL"
+          id="repoUrl"
+          href="https://github.com/Ausranking/HNGx-stage-1-task.git"
+          target="_blank"
+          >Visit Github Repo</a
+        >
       </section>
     </div>
 
@@ -73,11 +79,11 @@
         const utcTime = time.toUTCString();
 
         // ...assigning day and time variables to the holder...
-        currentDayOfWeek.textContent = dayOfWeek;
-        currentTime.textContent = utcTime;
+        currentDayOfWeek.textContent = "Day:" + " " + dayOfWeek;
+        currentTime.textContent = "Time in UTC : " + " " + utcTime;
       };
       updateTime();
-      //   setInterval(updateTime, 1000);
+      setInterval(updateTime, 1000);
     </script>
   </body>
 </html>

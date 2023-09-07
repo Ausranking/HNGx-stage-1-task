@@ -1,6 +1,7 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: aquamarine;
+$primary-color: rgb(134, 240, 205);
 $decoration: none;
+$variant: small-caps;
 * {
   margin: 0;
   padding: 0;
@@ -17,18 +18,54 @@ img {
   width: 1200px;
   margin: auto;
   max-width: 100%;
+  height: 80vh;
   padding: 3rem;
   display: grid;
   place-items: center;
+  justify-items: center;
   gap: 10px;
-  .slack-section {
+  border: 3px solid $primary-color;
+  #slack-section {
     display: grid;
     place-items: center;
+    font-variant: $variant;
+    [data-testid="slackUserName"] {
+      font-size: 2rem;
+    }
   }
-}
+  #date-and-time-section {
+    width: auto;
+    padding-block: 1rem;
+    font-variant: $variant;
+    font-weight: bold;
 
-[data-testid="myTrack"] {
-  color: red;
+    #DayOfWeek {
+      font-size: 1.5rem;
+      margin-block: 1rem;
+    }
+    #currentTime {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+  #track-info {
+    [data-testid="myTrack"] {
+      color: $primary-color;
+    }
+  }
+  #repo-section {
+    display: block;
+    #repoUrl {
+      display: inline-block;
+      font-size: 14px;
+      color: $primary-color;
+      font-weight: 600;
+    }
+    #repoUrl:hover {
+      text-decoration: underline;
+      font-weight: 100;
+    }
+  }
 }
 
 @media (prefers-color-scheme: "dark") {
