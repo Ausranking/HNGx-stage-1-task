@@ -15,6 +15,7 @@ img {
 
 .container {
   width: 1200px;
+  margin: auto;
   max-width: 100%;
   padding: 3rem;
   display: grid;
@@ -28,4 +29,11 @@ img {
 
 [data-testid="myTrack"] {
   color: red;
+}
+
+@media (prefers-color-scheme: "dark") {
+  html {
+    background-color: rgb(20, 22, 24);
+    color: $primary-color;
+  }
 }

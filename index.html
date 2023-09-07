@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/myImage.jpg"
+      type="image/x-icon"
+      sizes="5px"
+    />
     <title>Stage 1 || HNG</title>
   </head>
+
   <body>
     <div class="container">
       <!-- ... Slack Details section ... -->
@@ -28,16 +35,17 @@
       <!-- Date and Time Section -->
       <section>
         <div
-          id="currentDayOfWeek"
           data-testid="currentDayOfTheWeek"
+          id="DayOfWeek"
           style="text-align: center"
         ></div>
-        <div id="currentTime" data-testid="currentUTCTime"></div>
+
+        <div data-testid="currentUTCTime" id="currentTime"></div>
       </section>
 
       <!-- ... Track...  -->
       <section>
-        <h2 data-testid="myTrack">Frontend Track</h2>
+        <h2 data-testid="myTrack">Frontend</h2>
       </section>
 
       <!-- Github Url section  -->
@@ -48,21 +56,28 @@
 
     <!-- ..........Some Javascript.......... -->
     <script>
-      const currentDayOfWeek = document.getElementById("currentDayOfWeek");
+      // ... calling the element which holds the day
+      const currentDayOfWeek = document.getElementById("DayOfWeek");
+
+      //   calling the element which will hold the UTC Time
       const currentTime = document.getElementById("currentTime");
 
+      // ...Function to hold date and time so an interval would be set to update every seconds..
       const updateTime = () => {
         const dayOfWeek = new Date().toLocaleDateString((en = "us"), {
           weekday: "long",
         });
 
+        //declaring a time var before converting to utc
         const time = new Date();
-        const utcTime = time.getVarDate(1999, 1, 2);
+        const utcTime = time.toUTCString();
 
+        // ...assigning day and time variables to the holder...
         currentDayOfWeek.textContent = dayOfWeek;
         currentTime.textContent = utcTime;
       };
-      setInterval(updateTime, 1000);
+      updateTime();
+      //   setInterval(updateTime, 1000);
     </script>
   </body>
 </html>
